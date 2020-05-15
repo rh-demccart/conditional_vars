@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - import_tasks: tasks/cloud_condition.yaml
+#    - import_tasks: tasks/create-ipi-config.yaml

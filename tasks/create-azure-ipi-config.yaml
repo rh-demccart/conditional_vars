@@ -1,0 +1,8 @@
+---
+- name: Include Azure vars
+  include_vars: group_vars/azureVars
+
+- name: Create AZURE build config
+  template:
+    src: ~/openshift_build_template/templates/azure-ipi-install-config.yaml.j2
+    dest: /tmp/azure-ipi-install-config.yaml

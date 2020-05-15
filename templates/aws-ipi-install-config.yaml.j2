@@ -1,0 +1,33 @@
+apiVersion: v1
+baseDomain: {{ awsclusterBaseDomain }}
+compute:
+- hyperthreading: Enabled
+  name: worker
+  platform: 
+    aws:
+      type: {{ awsworkerType }}
+  replicas:{{ awsworkerReplicas }} 
+controlPlane:
+  hyperthreading: Enabled
+  name: master
+  platform:
+    aws:
+      type: {{ awsmasterType }}
+  replicas:{{ awsmasterReplicas }} 
+metadata:
+  creationTimestamp: null
+  name: {{ awsclusterName }}
+networking:
+  clusterNetwork:
+  - cidr: {{ awscidr }}
+    hostPrefix: {{ awsclusterNetworkHostprefix }}
+  machineCIDR: {{ awsmachineCidr }}
+  networkType: OpenShiftSDN
+  serviceNetwork:
+  - {{ awsserviceNetwork }}
+platform:
+  aws:
+    region: {{ awsregion }}
+pullSecret: {{ awspullSecret }}
+sshKey: |
+  {{ awssshKey }}

@@ -1,0 +1,11 @@
+---
+- name: Include cloud conditional vars
+  include_vars: group_vars/cloud
+
+- name: call azure template
+  import_tasks: tasks/create-azure-ipi-config.yaml
+  when: azure == "true"
+
+- name: call aws template
+  import_tasks: tasks/create-aws-ipi-config.yaml
+  when: aws == "true"
