@@ -1,10 +1,10 @@
-# conditional_vars
+# conditional variables
 
 ### Steps:
 
  * Clone the repo
  * cd conditional_vars
- * Make any changes to you want to the files under (vi group_vars/<filename>
+ * Make any changes to you want to the files under (vi group_vars/<filename>)
  * Run the playbook (only runs on the localhost)
  
  ````
